@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useEffect, useState } from 'react'
 import { useAuth } from './AuthContext'
-import { getActiveSocket } from '../services/sockets'
+import { getActiveSocket } from '../services/socket'
 
 const SocketContext = createContext()
 
@@ -49,7 +49,6 @@ export const SocketProvider = ({ children }) => {
       }))
     }
 
-    // CL Tech specific events
     const onElectionUpdate = (data) => {
       setRealTimeData(prev => ({
         ...prev,
@@ -99,17 +98,12 @@ export const SocketProvider = ({ children }) => {
   }
 
   const value = {
-    // State
     isConnected,
     chatMessages,
     realTimeData,
-    
-    // Methods
     sendMessage,
     startStrategy,
     stopStrategy,
-    
-    // Current socket
     socket: getActiveSocket(currentBackend)
   }
 
@@ -118,4 +112,4 @@ export const SocketProvider = ({ children }) => {
       {children}
     </SocketContext.Provider>
   )
-  }1¹11
+  }

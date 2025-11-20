@@ -108,26 +108,18 @@ export const AuthProvider = ({ children }) => {
     setCurrentBackend(backend)
     localStorage.setItem('current_backend', backend)
     
-    // Verify token for new backend
     await verifyToken(backend)
   }
 
   const value = {
-    // State
     user,
     currentBackend,
     loading,
-    
-    // Backend info
     BACKENDS,
-    
-    // Methods
     login,
     register,
     logout,
     switchBackend,
-    
-    // Helpers
     isAuthenticated: !!user,
     isFounder: user?.type === 'founder',
     isAdmin: user?.type === 'admin' || user?.type === 'founder',
@@ -138,5 +130,4 @@ export const AuthProvider = ({ children }) => {
       {children}
     </AuthContext.Provider>
   )
-
-  
+  }

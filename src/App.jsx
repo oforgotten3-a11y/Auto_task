@@ -1,29 +1,31 @@
 import React from 'react'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { AuthProvider } from './contexts/AuthContext'
+import Navbar from './components/Layout/Navbar'
+import Splash from './pages/Splash'
+import Dashboard from './pages/Dashboard'
+import ProtectedRoute from './components/Auth/ProtectedRoute'
 
+// Simple version - we'll add more pages once basic navigation works
 function App() {
   return (
-    <div style={{
-      background: '#0a0a0f',
-      color: 'white', 
-      minHeight: '100vh',
-      padding: '20px',
-      textAlign: 'center',
-      fontFamily: 'Arial, sans-serif'
-    }}>
-      <h1 style={{ color: '#00f3ff', fontSize: '2rem' }}>
-        🚀 AutoTask
-      </h1>
-      <p>Frontend is working!</p>
-      <div style={{
-        background: 'rgba(0, 243, 255, 0.1)',
-        padding: '20px',
-        borderRadius: '10px',
-        marginTop: '20px',
-        border: '1px solid #00f3ff'
-      }}>
-        <p>Cyberpunk Theme Loaded</p>
-      </div>
-    </div>
+    <Router>
+      <AuthProvider>
+        <div className="min-h-screen bg-cyber-dark text-white">
+          <Navbar />
+          <main className="min-h-screen pt-16"> {/* Padding for fixed navbar */}
+            <Routes>
+              <Route path="/" element={<Splash />} />
+              <Route path="/dashboard" element={
+                <ProtectedRoute>
+                  <Dashboard />
+                </ProtectedRoute>
+              } />
+            </Routes>
+          </main>
+        </div>
+      </AuthProvider>
+    </Router>
   )
 }
 

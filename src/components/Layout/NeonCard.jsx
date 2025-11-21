@@ -26,11 +26,11 @@ const NeonCard = ({
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      whileHover={hover ? { y: -5, transition: { duration: 0.2 } } : {}}
+      whileHover={hover ? { y: -2, transition: { duration: 0.2 } } : {}}
       className={`
-        glass-morphism rounded-xl p-6 transition-all duration-300
+        glass-morphism rounded-xl p-6 transition-all duration-300 border
         ${glowStyles[glowColor]} ${borderStyles[glowColor]}
-        ${hover ? 'cursor-pointer' : ''}
+        ${hover ? 'cursor-pointer hover:shadow-lg' : ''}
         ${className}
       `}
       {...props}

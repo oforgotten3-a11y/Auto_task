@@ -1,51 +1,7 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-@layer base {
-  body {
-    @apply bg-cyber-dark text-white font-mono;
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
-  }
-  
-  /* Custom scrollbar */
-  ::-webkit-scrollbar {
-    width: 8px;
-  }
-  
-  ::-webkit-scrollbar-track {
-    @apply bg-cyber-dark;
-  }
-  
-  ::-webkit-scrollbar-thumb {
-    @apply bg-cyber-blue rounded-full;
-  }
-}
-
-@layer components {
-  .neon-glow-blue {
-    box-shadow: 0 0 10px theme('colors.cyber-blue'),
-                0 0 20px theme('colors.cyber-blue'),
-                0 0 40px theme('colors.cyber-blue');
-  }
-  
-  .neon-glow-pink {
-    box-shadow: 0 0 10px theme('colors.cyber-pink'),
-                0 0 20px theme('colors.cyber-pink'),
-                0 0 40px theme('colors.cyber-pink');
-  }
-  
-  .glass-morphism {
-    @apply backdrop-blur-md bg-cyber-card border border-white/10;
-  }
-}
-
-/* Cyberpunk grid background */
-.cyber-grid {
-  background-image: 
-    linear-gradient(rgba(0, 243, 255, 0.1) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0, 243, 255, 0.1) 1px, transparent 1px);
-  background-size: 50px 50px;
+body {
+  margin: 0;
+  padding: 0;
+  background: #0a0a0f;
+  color: white;
+  font-family: sans-serif;
 }

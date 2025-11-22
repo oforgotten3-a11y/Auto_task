@@ -16,20 +16,17 @@ export const AuthProvider = ({ children }) => {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    // Check if user is already logged in
     const token = localStorage.getItem('auth_token')
     const savedBackend = localStorage.getItem('current_backend')
     
     if (token && savedBackend) {
       setCurrentBackend(savedBackend)
-      // In a real app, you would verify the token with your backend
-      setUser({ email: 'user@example.com', name: 'Demo User' })
+      setUser({ email: 'user@example.com', name: 'Demo User', type: 'user' })
     }
     setLoading(false)
   }, [])
 
   const login = async (email, password, userType, backend = 'AUTOTASK') => {
-    // Simulate login - replace with actual API call
     return new Promise((resolve) => {
       setTimeout(() => {
         const userData = { email, name: 'Demo User', type: userType }

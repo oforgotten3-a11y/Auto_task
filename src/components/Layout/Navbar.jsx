@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import { useAuth } from '../../contexts/AuthContext' // Fixed import path
+import { useAuth } from '../contexts/AuthContext'
 
 const Navbar = () => {
   const { user, logout, currentBackend } = useAuth()
@@ -11,7 +11,16 @@ const Navbar = () => {
 
   const navItems = [
     { path: '/dashboard', label: 'Dashboard', icon: '📊' },
+    { path: '/strategies', label: 'Strategies', icon: '🤖' },
+    { path: '/wallet', label: 'Wallet', icon: '💰' },
+    { path: '/chat', label: 'Chat', icon: '💬' },
+    { path: '/settings', label: 'Settings', icon: '⚙️' },
   ]
+
+  // Add CL Tech Console only for founders
+  if (user?.type === 'founder') {
+    navItems.push({ path: '/cl-tech-console', label: 'CL Console', icon: '🔬' })
+  }
 
   return (
     <nav className="bg-cyber-card backdrop-blur-lg border-b border-cyber-blue/30 fixed top-0 left-0 right-0 z-50">
@@ -23,7 +32,7 @@ const Navbar = () => {
               <span className="text-black font-bold text-sm">A</span>
             </div>
             <span className="text-lg font-bold bg-gradient-to-r from-cyber-blue to-cyber-pink bg-clip-text text-transparent">
-              AutoTask
+              {currentBackend === 'AUTOTASK' ? 'AutoTask' : 'CL Tech'}
             </span>
           </Link>
 

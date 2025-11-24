@@ -1,5 +1,5 @@
 import React from 'react'
-import { useAuth } from '../../contexts/AuthContext' // Fixed import path
+import { useAuth } from '../contexts/AuthContext'
 
 const Dashboard = () => {
   const { user, currentBackend } = useAuth()

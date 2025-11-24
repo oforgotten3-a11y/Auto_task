@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useEffect, useState } from 'react'
-import { useAuth } from './AuthContext'
+import { useAuth } from '../contexts/AuthContext'
 import { getActiveSocket } from '../services/socket'
 
 const SocketContext = createContext()
@@ -112,4 +112,4 @@ export const SocketProvider = ({ children }) => {
       {children}
     </SocketContext.Provider>
   )
-  }
+      }

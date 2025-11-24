@@ -28,7 +28,7 @@ const NeonCard = ({
       animate={{ opacity: 1, y: 0 }}
       whileHover={hover ? { y: -2, transition: { duration: 0.2 } } : {}}
       className={`
-        glass-morphism rounded-xl p-6 transition-all duration-300 border
+        bg-cyber-card backdrop-blur-lg rounded-xl p-6 transition-all duration-300 border
         ${glowStyles[glowColor]} ${borderStyles[glowColor]}
         ${hover ? 'cursor-pointer hover:shadow-lg' : ''}
         ${className}

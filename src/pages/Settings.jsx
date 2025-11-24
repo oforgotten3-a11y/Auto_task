@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useAuth } from '../contexts/AuthContext'
 import NeonCard from '../components/Layout/NeonCard'
 import NeonButton from '../components/UI/NeonButton'
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 
 const Settings = () => {
   const { user } = useAuth()

@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import { useAuth } from '../contexts/AuthContext'
+import { useAuth } from '../../contexts/AuthContext' // Fixed import path
 
 const Navbar = () => {
   const { user, logout, currentBackend } = useAuth()

@@ -7,69 +7,13 @@ body {
   padding: 0;
   background: #0a0a0f;
   color: white;
-  font-family: 'Inter', sans-serif;
+  font-family: sans-serif;
 }
 
-/* Custom cyberpunk utility classes */
-.glass-morphism {
-  background: rgba(17, 25, 40, 0.75);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-}
-
-/* Cyberpunk color classes */
-.text-cyber-blue { color: #00f3ff; }
-.text-cyber-pink { color: #ff00ff; }
-.text-cyber-purple { color: #9d00ff; }
-.text-cyber-green { color: #00ff88; }
-
-.bg-cyber-blue { background-color: #00f3ff; }
-.bg-cyber-pink { background-color: #ff00ff; }
-.bg-cyber-purple { background-color: #9d00ff; }
-.bg-cyber-green { background-color: #00ff88; }
-
-.border-cyber-blue { border-color: #00f3ff; }
-.border-cyber-pink { border-color: #ff00ff; }
-.border-cyber-purple { border-color: #9d00ff; }
-.border-cyber-green { border-color: #00ff88; }
-
-/* Background colors */
-.bg-cyber-dark { background-color: #0a0a0f; }
-.bg-cyber-card { 
-  background: rgba(17, 25, 40, 0.75);
-  backdrop-filter: blur(16px);
-}
-
-/* Shadow/glow effects */
-.shadow-cyber-blue { box-shadow: 0 0 20px rgba(0, 243, 255, 0.3); }
-.shadow-cyber-pink { box-shadow: 0 0 20px rgba(255, 0, 255, 0.3); }
-.shadow-cyber-purple { box-shadow: 0 0 20px rgba(157, 0, 255, 0.3); }
-.shadow-cyber-green { box-shadow: 0 0 20px rgba(0, 255, 136, 0.3); }
-
-/* Custom animations */
-@keyframes glow {
-  0% { box-shadow: 0 0 5px currentColor; }
-  100% { box-shadow: 0 0 20px currentColor, 0 0 30px currentColor; }
-}
-
-.animate-glow {
-  animation: glow 2s ease-in-out infinite alternate;
-}
-
-/* Scrollbar styling */
-::-webkit-scrollbar {
-  width: 6px;
-}
-
-::-webkit-scrollbar-track {
-  background: rgba(255, 255, 255, 0.1);
-}
-
-::-webkit-scrollbar-thumb {
-  background: rgba(0, 243, 255, 0.5);
-  border-radius: 3px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: rgba(0, 243, 255, 0.8);
+/* Custom utility classes */
+.line-clamp-2 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
 }
